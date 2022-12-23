@@ -1,0 +1,52 @@
+body {
+    background:linear-gradient(270deg, rgb(86, 229, 234),
+    rgb(40, 157, 97));
+    font-family: 'TT Globs Trial';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    width: 80%px;
+    display: flex;
+    justify-content: center;
+    border-color: black;
+
+}
+
+div {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+}
+div button {
+    width: 100px;
+    font-family: 'TT Globs Trial';
+    border-radius: 15px;
+    border-color: rgb(141, 145, 145);
+    background-color: black;
+    color: beige;
+    padding: 7px 20px;
+    margin: auto 7px;
+    /* esta funcion nos permite dar un tiempo de 
+    espera predeterminado para la transicion de otra funcion */
+    transition: all 1s; 
+    transition: background-color .5s;
+    transition: foun-family .6;
+}
+
+button:hover {
+    background-color: beige;
+    border-color: black;
+    color: black;
+    cursor: grabbing;
+    /* esta funcion da el efecto de de iluminacion,
+    o sombreada */
+    box-shadow: 0 0 30px 7px rgba(255, 253, 253, 0.8);
+    
+}

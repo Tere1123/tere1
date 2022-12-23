@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../general.css">
+    <title>Intro</title>
+    <link rel="stylesheet" href="intro.css">
+
+
+</head>
+
+<body>
+    <h1>Animaciones con css</h1>
+    <p>El css permite animar elementos html sin necesidad de recurrir
+        a JS
+    </p>
+
+    <h2>Animaciones</h2>
+    <p>
+        Una animacion es el cambio <b>gradual de un estilo a otro</b>
+
+        se pueden cambiar tanstas propiedades de CSS como quiera tanstas
+        veces como sea necesario
+    </p>
+    <p>
+        para usar una animacion debe especificar la regla <code>@keyframes</code>
+    </p>
+
+    <h2>La regla <code>@keyframes</code></h2>
+    <p>
+        Esta regla contiene los estilos que el elemnto tendra un determinado
+        momnto.
+    </p>
+    <p>
+        Cuando se especifica una regla los cambios se ejecutaran de manera
+        gradual en ciertos momentos.
+        Para que la animacion funcione,debe asignar un keyframe al css de un
+        elemento.
+
+        ejemplo: ref al css linea 1
+    </p>
+
+    <div class="animado"></div>
+
+    <p>
+        cuando una animacion finaliza, el estado del elemento revierte a su
+        forma oreigianal.
+    </p>
+
+    <p>Ejemplo con distintos estados de animacion rfe 27</p>
+
+    <pre>
+
+
+    </pre>
+
+    <div class="estados"></div>
+
+    <hr>
+
+    <div class="circulo"></div>
+
+    <p>circulo que dibuja un triangulo</p>
+
+
+    <p>animacion sencilla al pulzar un boton</p>
+
+    <div class="boton">
+        Pulsa aqui!
+    </div>
+
+    <h2>Propiedades de las animaciones</h2>
+    <ul>
+        <li><code>animation-delay</code></li>
+        <li><code>animation-iteration-count</code></li>
+        <li><code>animation-direction</code></li>
+        <li><code>animation-timing-function</code></li>
+        <li><code>animation-fill-mode</code></li>
+    </ul>
+
+    <h3><code>animation-delay</code>:</h3>
+    <p>
+        Especifica el retardo del inicio de una animación.
+    </p>
+    <p>
+        Los valores positivos indican el tiempo que ha de transcurrir para la animación de comienzo. Los valores
+        negativos indican que la animación empezará como si ya hubiese transcurrido el tiempo especificado.
+    </p>
+
+    <h3><code>animation-iteration-count</code></h3>
+    <p>
+        Establece el número de veces que se repetirá una animación.
+    </p>
+    <p>
+        Se puede establecer un número natural de veces o se puede indicar un número ilimitado con el valor
+        <code>infinite</code>.
+    </p>
+
+    <h3><code>animation-direction</code></h3>
+    <p>
+        Especifica si la animación se producirá en orden normal, inverso o irá alternando ciclos. Los valores posibles
+        son:
+    </p>
+    <ul>
+        <li><code>normal</code> La animación se reproduce hacia adelante. Valor por defecto.</li>
+        <li><code>reverse</code> La animación se reproduce hacia atrás (de 100% a 0%).</li>
+        <li><code>alternate</code> La animación se reproduce hacia adelante, y luego hacia atrás.</li>
+        <li><code>alternate-reverse</code> La animación se reproduce hacia atrás, y luego hacia adelante.</li>
+    </ul>
+
+    <h3><code>animation-timing-function</code></h3>
+    <p>
+        Especifica la curva de velocidad al reproducir una animación.
+    </p>
+    <p>
+        Puede tener los siguientes valores:
+    </p>
+    <ul>
+        <li><code>ease</code> La animación tendrá un inicio lento, luego irá rápido y tendrá un final lento. Valor por
+            defecto.</li>
+        <li><code>linear</code> La animación tendrá una velocidad estática durante toda la duración.</li>
+        <li><code>ease-in</code> La animación tendrá un inicio lento.</li>
+        <li><code>ease-out</code> La animación tendrá un final lento.</li>
+        <li><code>ease-in-out</code> La animación tendrá un inicio lento y un final lento.</li>
+        <li><code>cubic-bezier(n, n, n, n)</code> Permite al usuario especificar la curva de velocidad mediante una
+            función.</li>
+    </ul>
+
+    <p>
+        Vamos a verlas en conjunto:
+    </p>
+
+    <div class="velocidades" id="div1">linear</div>
+    <div class="velocidades" id="div2">ease</div>
+    <div class="velocidades" id="div3">ease-in</div>
+    <div class="velocidades" id="div4">ease-out</div>
+    <div class="velocidades" id="div5">ease-in-out</div>
+
+    <hr>
+
+    <h3><code>animation-fill-mode</code></h3>
+
+    <p>
+        por defecto las animaciones no afectan los elementos
+        antes de iniciar o despues de finalizar.
+        Esta propiedad cambia este comportamiento
+    </p>
+    <p>
+        la propiedad <code>animation-fill-mode</code>
+        establese el estilo del elemento objerivo cuando
+        la animacion no se esta reproducioendo.
+
+    </p>
+    <p>
+        los valores posibles:
+    </p>
+    <ul>
+        <li><code>none</code>Valor por defecto,la animacion no aplica
+            cambios de estilo</li>
+        <li><code>forward</code>El elemento retendra el estilo establesido
+            en el ultimo keyframe de la animacion (dependera de si se
+            estareproduciendo normal o manera invertida <code>animation-direction</code>
+            y el numero de interacciones <code>animation-iteration-count</code>).</li>
+
+        <li><code>backwards</code>El elemento retentra el estilo establecido enelpreimer
+            keyframe de la animacion.dependera de la direccion y tomara el estilo durante el
+            retardo proporcionado por <code>animation-delay</code></li>
+            
+        <li><code>both</code>La animacion seguira las reglas combinadas de forward y backwards</li>
+    </ul>
+
+    <div class="velocidades" id="fillNone">None</div>
+    <div class="velocidades" id="fillForwards">Forwards</div>
+    <div class="velocidades" id="fillBackwards">Backwards</div>
+    <div class="velocidades" id="fillBoth">Both</div>
+    
+
+
+
+</body>
+
+</html>

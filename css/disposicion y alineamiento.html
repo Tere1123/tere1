@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>Layout</title>
+
+    <style>
+        .container {
+            color: aliceblue;
+            background: #aabbcc;
+            text-align: center;
+        }
+
+        .container div {
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+        #hideShow {
+            display: none;
+        }
+
+        .borde {
+            border: 2px solid rgb(117, 117, 209);
+
+        }
+
+        .bloque {
+            display: block;
+        }
+
+        .linea {
+            display: inline;
+
+        }
+
+        /* display y visibility */
+        .flex-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .flex-container>div {
+            border: 2px solid blue;
+            width: 100%;
+            padding: 10px;
+
+        }
+
+        .img {
+            height: 150px;
+            background-image: url(https://th.bing.com/th/id/OIP.2UrOxu80bDsljBi_-kRxlAHaFj?pid=ImgDet&rs=1);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .flex-container button {
+            background: rgb(160, 160, 179);
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: aliceblue;
+            font-size: 1.1rem;
+        }
+
+        /* ----ancho----- */
+
+        .divw {
+            width: 500px;
+            margin: auto;
+
+        }
+
+        .divmw {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .divRel {
+            position: relative;
+            left: 30px;
+
+            border: 3px solid blue;
+        }
+
+        #btnTop {
+            border: none;
+            background-color: rgb(59, 181, 91);
+            color: cornsilk;
+            border-radius: 5px;
+            padding: 5ps 10px;
+            cursor: pointer;
+            font-size: 1.25rem;
+
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 5;
+            /* el z-index: da prioridad sobre la importancia
+         de que se ve en la pantalla ejem: el boton se ve sobre todas las 
+         imagenes y el menu */
+        }
+
+
+        .relative {
+            position: relative;
+            height: 200px;
+            width: 400px;
+        }
+
+        .divAbs {
+
+            position: absolute;
+            height: 100px;
+            width: 200;
+
+            bottom: 10px;
+            right: 10px;
+        }
+
+
+        nav {
+            display: flex;
+            background-color: #314c7f;
+            color: #f7f3ee;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+            cursor: pointer;
+            text-decoration: 0;
+
+            z-index: 4;
+
+        }
+
+        .contenedor-img {
+            height: 400px;
+            width: 100%;
+            background-image: url(https://images.pexels.com/photos/34107/milky-way-stars-night-sky.jpg);
+            background-size: cover;
+            background-position: center;
+
+            position: relative;
+        }
+
+        .contenedor-img p {
+            color: aliceblue;
+            text-align: center;
+            width: 80px;
+
+            position: absolute;
+            /* height: 100px;
+            width: 200;
+
+            bottom: 10px;
+            right: 10px; */
+        }
+
+        .a {
+            left: 10px;
+
+        }
+
+        .b {
+
+            right: 10px;
+        }
+
+        .c {
+            left: 50%;
+            bottom: 50%;
+
+            transform: translate(-50%, 50%);
+        }
+
+        .d {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .e {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        /* como lo hace el profe: los clasifico de forma diferente */
+
+        .top {
+            top: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+
+        .bottom {
+            bottom: 0;
+
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .center {
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+         /* z-index */
+         .z-container {
+            color: white;
+            position: relative;
+
+            margin-bottom: 220px;
+            border: 1px solid purple;
+        }
+        .z-container p {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .z-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            opacity: 0.9;
+        }
+
+        .black-box {
+            border: 2px solid black;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+
+            position: absolute;
+            z-index: 1;
+            margin: 30px;
+        }
+        .green-box {
+            background: lightgreen;
+            height: 150px;
+
+            position: absolute;
+            z-index: 2;
+            top: -15px;
+            right: 25px;
+        }
+        .gray-box {
+            background: lightgray;
+            height: 100px;
+
+            position: absolute;
+            z-index: 3;
+            top: 120px;
+            right: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>"layout" en CSS</h1>
+    <p>
+        El Layout es la disposicion o la forma en la que los elementos
+        se muestran en plantilla segun su tipo
+    </p>
+
+    <h2>Display</h2>
+    <p>
+        Es la propiedad mas importante de css para controlar el alineamiento.
+    </p>
+    <p>
+        <code>display</code> especifica la forma en que se muestra un elemento.
+    </p>
+    <p>
+        en HTML cada elemento posee un valor por defecto dependiendo del tipo
+        de elemnto que sea. la mayoria de los elemtos poseen una propiedad
+        <code>block</code> o <code>inline</code> por defecto.
+    </p>
+
+    <div class="container">
+        <div onclick="showPanel()">haz clinck para mostar el panel</div>
+        <div id="hideShow">
+            <p>
+                Este panel contiene un elemento <code>div</code> ocualto por
+                defecto con <code>Display: none;</code>
+            </p>
+            <p>
+                Esta estilizado con css y usamos js para mostrarlo a cambiando a
+                <code>display: block</code>
+            </p>
+        </div>
+    </div>
+
+    <h2>Elementos de bloque</h2>
+    <p>
+        Los elemntos de bloque siempre inician en una nueva linea y toman todo
+        el ancho disponible.
+    </p>
+
+    <div class="borde">
+        Este elemento <code>div</code> es de tipo bloque.
+    </div>
+    <p>algunos elemntos en bloque</p>
+    <ul>
+        <li>h1-h6</li>
+        <li>div</li>
+        <li>p</li>
+        <li>form</li>
+        <li>header</li>
+        <li>section</li>
+        <li>footer</li>
+    </ul>
+
+    <h2>Elementos en linea (inline)</h2>
+    <p> Estos elementos no empiezan en una nueva linea y
+        ocupan solo el ancho necesario</p>
+    <p>
+        Esto es <span class="borde"> un espan dentro</span>un parrafo.
+    </p>
+    <p>
+        alguno de estos elemntos:
+    </p>
+    <ul>
+        <li>span</li>
+        <li>a</li>
+        <li>img</li>
+    </ul>
+
+    <h2>Alterar el valor de <code>display</code> por defecto</h2>
+
+    <p>
+        Es posible alterar el valor de los elementos para cambiar la
+        forma en la que estos se muestran en pantalla.
+    </p>
+
+    <p>Ejemplo: una lista horizontal</p>
+    <ul>
+        <li class="linea"><a href="">Home</a></li>
+        <li class="linea"><a href="">Contact us</a></li>
+        <li class="linea"><a href="">Services</a></li>
+
+    </ul>
+
+    <p>Ejemplo de mostrar varios espan como bloques</p>
+    <span class="bloque borde">esta es una serie</span><span class="bloque borde">de elemntos span</span>
+    <span class="bloque borde">puestos en bloque</span>
+
+    <h2>Diferencia entre <code>display; none <code> y </code>visibility: hidden</code></h2>
+    <p>Al ocultar un elemento con <code>display: none</code> la pagina se mostrara
+        como si el elemento no estubiera ahi
+    </p>
+    <p>
+        al ocultar un elemnto con <code>visibility: hidden</code> el elemnto no se
+        mostrara pero el espacio quedara en blanco
+    </p>
+    <div class="flex-container">
+        <div>
+            <p><code>display: none</code></p>
+            <div class="img" b id="quitar"></div>
+            <button onclick="quitar()">Quitar</button>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div>
+            <p><code>vidibility: hidden</code></p>
+            <div class="img" id="esconder"></div>
+            <button onclick="esconder()">Esconder</button>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div>
+            <p>reset</p>
+            <div class="img"></div>
+            <button onclick="restablecer()">Restablecer</button>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <h2>Anchura</h2>
+    <h3>width y max-width</h3>
+
+    <div class="container">
+        <p>como hemos mensionado anterior mente, un elemento de bloque
+            siempre ocupa todo el ancho disponble.
+        </p>
+        <p>asignar una anchura con <code>width</code> evitara que un elemnto en
+            bloque se estire a los borde de su contenedor,con esto podremos asignar
+            su margen con <code>margin: auto</code> para centrar horizontalmente el
+            elemento respecto a su contenedor. el elemenetos pasara a ocupar el ancho
+            especifico y el resto del espacio sobrante sera repartido equitativamente
+            entre sus margenes
+        </p>
+
+        <div class="divw">
+            Este elenemto <code>div</code> tiene un ancho de 500px y un margin auto
+        </div>
+        <p>
+            El problema al asignar un espacio fijo nos dara problemas en pantallas pequeñas,
+            el elemento se saltra del contenedor y el navegador añadira una barra de scroll
+            horizontal.
+
+        </p>
+        <p>
+            si por el contrario <code>max width</code> mejorara el manejo del navegador
+            de estos elemetos esto es muy importante a la hora de construir sitios web
+            para dispositivos pequeños.
+        </p>
+
+        <div class="divmw">
+
+            Este elenemto <code>div</code> tiene un ancho de 500px y un margin auto
+
+        </div>
+
+    </div>
+
+    <h2>La propiedad <code>position</code></h2>
+
+    <p>
+        Esta propiedad define el metodo de posicionamiento de un elemento.
+        los hay de 5 tipos.
+    </p>
+
+    <ul>
+        <li>static</li>
+        <li>relative</li>
+        <li>fixed</li>
+        <li>absolute</li>
+        <li>sticky</li>
+    </ul>
+
+    <p>los elementos se posicionan con las propiedades top, left,right,
+        bottom. Sin embargo estas propiedades no funcionaran sin especificar
+        primero la <code>position</code> ,a demas, dependiendo del tipo
+        de <code>posicion</code>
+        las propiedades funcionaran de manera distinta.
+    </p>
+
+    <h3><code>position: static</code></h3>
+
+    <p> todos los elementos tienen este valor por defecto</p>
+
+    <p>
+        Las propiedades top,bottom, left y right no afectan a los
+        elementos con posicion estatica.
+    </p>
+
+    <h3><code>position: relative</code></h3>
+
+    <p>
+        Un elemento con este valor se posicionara de manera relativa
+        a su posicion normal, es decir, el control de ejersera sobre si mismo.
+    </p>
+
+    <div class="divRel">
+
+        Este elenemto <code>div</code> tiene un <code>position: relative</code>
+    </div>
+
+
+    <h3><code>position: fixed</code></h3>
+    <p>
+        Un elemento con este valor, se posicionara relativamente respecto a la pantalla.
+        lo que quiere decir que tendra siempre la misma posicion incluso si scrollemos
+        la web.
+
+    </p>
+
+    <button id="btnTop" onclick="toTop()" class="bi bi-arrow-up-circle"></i>
+
+    </button>
+
+    <h3><code>position: absolud</code></h3>
+    <p>
+        Un elemento con este valor se posicionara respecto a su contenedor
+        posicionado(no estatico)
+    </p>
+    <p>
+        si un elemento absoluto no tiene ancestros posicionados, usara el body y actura
+        como un <code>position: fixed</code>
+    </p>
+    <div class="container relative">
+        Este elemento <code>div</code> tiene un <code>position:relative</code>
+        <div class="divAbs">
+            Este elemento <code>div</code> tiene un <code>position:absolud</code>
+
+        </div>
+    </div>
+
+    <!-- <div class="divAbs">
+        Esato es un div sin ancestro posicionado!!!!
+    </div> -->
+
+    <h3><code>position: stick</code></h3>
+
+    <p>
+        un elemeneto <code>stick</code> alternara su comportamiento entre
+        relative y fixed dependiendo de la posicion de scroll de la pagina
+    </p>
+
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">shop</a>
+        </div>
+        <div>
+            <a href="#">about us</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+
+    <hr>
+
+    <h3>posicion de texto respecto a una imagen</h3>
+
+
+    <div class="contenedor-img">
+        <p class="a">Top left</p>
+        <p class="b">top right</p>
+        <p class="c">center</p>
+        <p class="d">bottom left</p>
+        <p class="e">bottom right</p>
+    </div>
+
+    <h2>El posicionamiento vertical con <code>z-index</code></h2>
+    <p>
+        El <code>z-index</code> determina el orden en el que se amontonan los elementos.
+    </p>
+    <p>
+        Cuando los elementos se posicionan, puede que se monten sobre otros.
+    </p>
+    <p>
+        Esta propiedad determina en qué orden se amontonan los elementos. Es decir,
+        qué elementos van por encima o
+        debajo de los otros.
+    </p>
+
+    <div class="z-container">
+        <h1>Esto es un título</h1>
+        <p>
+            He aquí una img con un z-index de -1
+        </p>
+        <img src="https://images.pexels.com/photos/264905/pexels-photo-264905.jpeg" alt="" width="100%">
+
+        <p>
+            <b>Nota:</b> El <code>z-index</code> sólo funciona en elementos posicionados
+            o en elementos flexibles(son
+            aquellos descendientes de contenedores con <code>display: flex</code>)
+        </p>
+    </div>
+
+    <h3>otro ejemplo de <code>z-index</code></h3>
+
+    <div class="z-container">
+        <div class="black-box">
+            <p>
+                Caja negra con un <code>z-index</code> de 1.
+            </p>
+        </div>
+        <div class="green-box">
+            <p>
+                Caja verde con un <code>z-index</code> de 2.
+            </p>
+        </div>
+        <div class="gray-box">
+            <p>
+                Caja gris con un <code>z-index</code> de 3.
+            </p>
+        </div>
+    </div>
+
+
+
+    <script>
+        function showPanel() {
+            const panel = document.getElementById('hideShow');
+            panel.style.display = 'block';
+        }
+
+        // quitar y esconder elemneto
+        const quitarFoto = document.getElementById('quitar');
+        const esconderFoto = document.getElementById('esconder');
+
+        function quitar() {
+            quitarFoto.style.display = 'none';
+
+        }
+
+        function esconder() {
+            esconderFoto.style.visibility = 'hidden';
+
+        }
+
+        function restablecer() {
+            quitarFoto.style.display = 'block';
+            esconderFoto.style.visibility = 'visible';
+        }
+
+        // boton to top
+        function toTop() {
+
+            // este codigo se tutiliza para estos navegadores
+            //opera,chrome,edge,firefox
+            // y el scrolltop nos permirte que al pulsar el boton la pagina se
+            //devuelva hacia la parte superior
+            document.documentElement.scrollTop = 0;
+
+            document.body.scrolltop = 0 //este se utiliza para el navegador de safari
+
+        }
+    </script>
+
+</html>
